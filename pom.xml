@@ -74,3 +74,20 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+Key Changes:
+Java Version Compatibility:
+
+In the <properties> section, I've added the maven.compiler.source and maven.compiler.target properties, setting both to 1.8 (Java 8).
+
+xml
+Copy
+Edit
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.compiler.source>1.8</maven.compiler.source>  <!-- Use Java 1.8 -->
+  <maven.compiler.target>1.8</maven.compiler.target>  <!-- Use Java 1.8 -->
+</properties>
