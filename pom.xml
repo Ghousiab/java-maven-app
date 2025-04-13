@@ -1,6 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
+  
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
@@ -19,9 +21,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- Set the Java version to 1.7 or 1.8 -->
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    
+    <!-- Set the Java version to 1.8 -->
+    <maven.compiler.source>1.8</maven.compiler.source>  <!-- Use Java 1.8 -->
+    <maven.compiler.target>1.8</maven.compiler.target>  <!-- Use Java 1.8 -->
   </properties>
 
   <build>
@@ -50,11 +53,12 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>com.mycompany.app.App</mainClass>
+              <mainClass>com.mycompany.app.App</mainClass>  <!-- Main class for the executable JAR -->
             </manifest>
           </archive>
         </configuration>
       </plugin>
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -68,7 +72,7 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.5.4,)</version>
+                  <version>[3.5.4,)</version> <!-- Require Maven version 3.5.4 or higher -->
                 </requireMavenVersion>
               </rules>
             </configuration>
@@ -78,16 +82,3 @@
     </plugins>
   </build>
 </project>
-Key Changes:
-Java Version Compatibility:
-
-In the <properties> section, I've added the maven.compiler.source and maven.compiler.target properties, setting both to 1.8 (Java 8).
-
-xml
-Copy
-Edit
-<properties>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <maven.compiler.source>1.8</maven.compiler.source>  <!-- Use Java 1.8 -->
-  <maven.compiler.target>1.8</maven.compiler.target>  <!-- Use Java 1.8 -->
-</properties>
